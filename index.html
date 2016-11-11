@@ -42,7 +42,7 @@
 
         <div id="controls">
             <form class="row">
-                <div class="col-xs-12">
+                <div class="col-md-12">
                     Columns: <input id="num-cols" type="number" name="columns" min="2" max="100">
                     Rows: <input id="num-rows" type="number" name="rows" min="2" max="100">
                     <button type="button" name="resize" onclick="resizeGrid(columns.value, rows.value)">
@@ -51,21 +51,15 @@
                 </div>
             </form>
             <div class="row">
-                <div class="col-xs-12">
-                    <button type="button" name="clear" onclick="clearGrid()">Clear all</button>
-
-                    <button type="button" name="fill" onclick="fillGrid()">Fill all</button>
+                <div class="col-md-12">
 
                     <button type="button" name="checker" onclick="checkerGrid()">Checkers</button>
-
                     <button type="button" name="random" onclick="randomValues()">Random</button>
                 </div>
             </div>
             <div id="main-buttons">
                 <div class="row">
-                    <div class="col-xs-12">
-                        <button type="button" name="evolve" onclick="updateGrid()">Evolve once</button>
-                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
