@@ -2,9 +2,9 @@
 <html lang="en-US">
 
 <head>
-    <title>Conway's Game of Life</title>
+    <title>Conway's Game</title>
     <meta name="description" content="Simple interactive browser-based visualization of the Game of Life">
-    <meta name="author" content="Anjana Sofia Vakil">
+    <meta name="author" content="Vasudev Reddy">
     <meta charset="UTF-8">
 
     <!-- Bootstrap -->
@@ -23,10 +23,10 @@
 
     <header class="col-md-4">
 
-        <div>
+       
             <h1>Conway's Game of Life</h1>
 
-            <h3>
+            <!--<h3>
                 <div>Black cells are alive.</div>
                 <div>White ones are dead.</div>
                 <div>Click a cell to change it.</div>
@@ -37,9 +37,8 @@
                         the game
                     </a> play out.
                 </div>
-            </h3>
+            </h3>-->
 
-        </div>
 
         <div id="controls">
             <form class="row">
@@ -82,6 +81,17 @@
                      </div>
                     <div class="col-xs-2"> slow </div>
 
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="txtclr alignc">Rules</h3>
+				<ul class="ul-ul-custom ul-li-custom">
+					<li>Any live cell with fewer than two live neighbours dies, as if caused by under-population</li>
+					<li>Any live cell with two or three live neighbours lives on to the next generation</li>
+					<li>Any live cell with more than three live neighbours dies, as if by over-population</li>
+					<li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction</li>
+				</ul>
+                    </div>
                 </div>
             </div>
         </div>

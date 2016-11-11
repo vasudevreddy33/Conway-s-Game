@@ -121,6 +121,31 @@ button:active {
     float:left;
 }
 
-.alive {
-    background-color: black;
+.alive{
+	background-color: #000000;
+}
+
+
+
+
+//update
+.txtclr {
+	color: #000080;
+}
+.alignc {
+	text-align: center;
+}
+ul.ul-ul-custom {
+	list-style-type: square;
+}
+ul.ul-li-custom {
+	color: #FFFFFF;
+}
+ul.ul-li-custom :nth-child(odd) {
+	color: #000000;
+}
+.pgclr {
+	background-color: #00aaff;
+	margin: 1%;
+	border-radius: 5px;
 }
