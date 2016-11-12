@@ -21,23 +21,10 @@
 <div class="container-fluid">
 <div id="wrapper" class="row">
 
-    <header class="pgclr col-md-4">
+    <header class="col-md-4 pgclr">
 
        
             <h1>Conway's Game of Life</h1>
-
-            <!--<h3>
-                <div>Black cells are alive.</div>
-                <div>White ones are dead.</div>
-                <div>Click a cell to change it.</div>
-                <div>
-                    Watch
-                    <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
-                        title="Conway's Game of Life on Wikipedia">
-                        the game
-                    </a> play out.
-                </div>
-            </h3>-->
 
 
         <div id="controls">
@@ -45,8 +32,8 @@
                 <div class="col-md-12">
                     Columns: <input id="num-cols" type="number" name="columns" min="2" max="100">
                     Rows: <input id="num-rows" type="number" name="rows" min="2" max="100">
-                    <button type="button" name="resize" onclick="resizeGrid(columns.value, rows.value)">
-                        Resize grid
+                    <button type="button" name="resize" onclick="reformGrid(columns.value, rows.value)">
+                        Resize
                     </button>
                 </div>
             </form>
@@ -54,7 +41,7 @@
                 <div class="col-md-12">
 
                     <button type="button" name="checker" onclick="checkerGrid()">Checkers</button>
-                    <button type="button" name="random" onclick="randomValues()">Random</button>
+                    <button type="button" name="random" onclick="camo()">Camo</button>
                 </div>
             </div>
             <div id="main-buttons">
@@ -69,30 +56,26 @@
                     </div>
                 </div>
                 <div class="slider row">
-                    <div class="col-xs-2 col-xs-offset-2"> fast </div>
+                    <div class="col-xs-2 col-xs-offset-2"> Fast </div>
                     <div class="col-xs-4">
                          <input type="range" name="speed" min="50" max="3000" value="500" id="speed"/>
                      </div>
-                    <div class="col-xs-2"> slow </div>
+                    <div class="col-xs-2"> Slow </div>
 
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="txtclr alignc">Rules</h3>
+                        <h3 class="txtclr">Rules</h3>
 				<ul class="ul-ul-custom ul-li-custom">
-					<li>Any live cell with fewer than two live neighbours dies, as if caused by under-population</li>
-					<li>Any live cell with two or three live neighbours lives on to the next generation</li>
-					<li>Any live cell with more than three live neighbours dies, as if by over-population</li>
-					<li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction</li>
+                    <li><h5>Any live cell with fewer than two live neighbours dies, as if caused by under-population</h5></li>
+                    <li><h5>Any live cell with two or three live neighbours lives on to the next generation</h5></li>
+                    <li><h5>Any live cell with more than three live neighbours dies, as if by over-population</h5></li>
+                    <li><h5>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction</h5></li>
 				</ul>
                     </div>
                 </div>
             </div>
         </div>
-
-        <p>
-            Made by <a href="http://github.com/vasudevreddy33">Vasudev</a>
-        </p>
 
     </header>
 

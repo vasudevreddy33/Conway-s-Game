@@ -1,63 +1,32 @@
 body {
     font-family: sans-serif;
-    /*background-color: #196464;*/
     background-color: white;
     color: black;
-    /*font-size: 1em;*/
 }
 
 
 header {
-    /*background-color: #196464;*/
-    /*max-width:400px;*/
-    /*float:left;*/
     margin-top: 5vh;
-    /*font-size: 1.3em;*/
-    /*border:3px solid yellow;*/
     text-align: center;
 }
 
 
 main {
-    /*clear:both;*/
-    /*max-width: 90%;*/
     margin-top: 5vh;
-    /*background-color: white;*/
-    /*border: 3px solid red;*/
 }
 
 h1 {
-    color: #337ab7;
+    color: #000080;
     font-size: 2.5em;
 }
 
-/*h1 a {
-    text-align: center;
-    float:left;
-    margin-bottom:20px;
-    text-decoration: none;
-    color:white;
-}
-
-h1 a:hover {
-    text-decoration: underline;
-}*/
-
-
-/*.instructions {
-    float:left;
-    padding-right: .5em;
-}*/
 
 button{
-    /*padding: 5px;*/
-    background-color: #337ab7;
+    background-color: #000080;
     color: white;
-    border: 2px solid #337ab7;
+    border: 2px solid #000080;
     border-radius: 7px;
     margin: 0 10px;
-    /*font-size: 1em;*/
-    /*width:100%;*/
 }
 
 button:active {
@@ -76,12 +45,6 @@ button:active {
     /*font-size:.75em;*/
 }
 
-/*#controls {
-    min-width: 40%;
-    padding: 20px 10px;
-    text-align: center;
-    float:right;
-}*/
 
 #main-buttons {
     font-size:1.5em;
@@ -104,7 +67,7 @@ button:active {
     height: 90vh;
     max-width: 90%;
     padding: 2px;
-    border: 5px solid #337ab7;
+    border: 5px solid #000080;
 
 }
 
@@ -126,16 +89,6 @@ button:active {
 	background-color: #000000;
 }
 
-
-
-
-//update
-.txtclr {
-	color: #000080;
-}
-.alignc {
-	text-align: center;
-}
 ul.ul-ul-custom {
 	list-style-type: square;
 }
@@ -147,6 +100,5 @@ ul.ul-li-custom :nth-child(odd) {
 }
 .pgclr {
 	background-color: #00aaff;
-	margin: 1%;
 	border-radius: 5px;
 }

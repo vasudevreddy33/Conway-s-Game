@@ -1,15 +1,15 @@
-// Set up with default values
-var nColumns = 20;
+// Set default values
+var nCols = 20;
 var nRows = 20;
-document.getElementById("num-cols").value = nColumns;
+document.getElementById("num-cols").value = nCols;
 document.getElementById("num-rows").value = nRows;
-resizeGrid(nColumns, nRows);
+reformGrid(nCols, nRows);
 
-// Clear and re-create the grid whenever the user clicks "Resize grid"
-function resizeGrid(cols, rows) {
-    nColumns = cols;
+// recreate grid
+function reformGrid(cols, rows) {
+    nCols = cols;
     nRows = rows;
-    console.log("C: " + String(nColumns));
+    console.log("C: " + String(nCols));
     console.log("R: " + String(nRows));
 
     var grid = document.getElementById("grid");
@@ -20,7 +20,7 @@ function resizeGrid(cols, rows) {
     var cellHeight = 1 / rows * 100;
     console.log("cellHeight: " + String(cellHeight));
 
-    // Clear grid completely
+    // Clear grid 
     while (grid.lastChild) {
       grid.removeChild(grid.lastChild);
     }
@@ -49,12 +49,12 @@ function resizeGrid(cols, rows) {
 
     }
 
-    // Initial cell values
+    // default values
     checkerGrid();
 }
 
 
-// Global variables for tracking continuous evolution
+// variables for tracking evolution
 var isRunning = false; //tracks whether the thing is running
 var interval; //holds the interval which will need to be cleared
 
@@ -69,7 +69,7 @@ function stopEvolving() {
     document.getElementById("speed").disabled = false;
 }
 
-// Start or stop continuous evolution depending on current state
+// Start/stop evolution based on state
 function toggleEvolve(button) {
     console.log(button.value);
 
@@ -89,7 +89,7 @@ function toggleEvolve(button) {
 }
 
 
-// Evolve the grid once
+// Evolve once
 function updateGrid() {
     console.log("Updating grid");
     var allCells = document.getElementsByClassName("cell");
@@ -108,7 +108,7 @@ function updateGrid() {
 
 }
 
-// Function to compute the next status of a particular cell based on neighbors
+// next status of a cell depending on neighbors
 function getNewStatus(cellId) {
     var pals = countAliveNeighbors(cellId);
     var cell = getCell(cellId);
@@ -142,7 +142,7 @@ function countAliveNeighbors(cellId) {
     neighborList.forEach( function(cellId) {
         var neighbor = getCell(cellId);
         if (neighbor === null) {
-            console.Log("ERROR Can't find cell " + cellId);
+            console.Log("ERROR at " + cellId);
             return;
         }
         if (neighbor.classList.contains("alive")) {
@@ -153,7 +153,7 @@ function countAliveNeighbors(cellId) {
     return liveOnes;
 }
 
-// Find the cell IDs of all neighbors of a given cell
+// cell IDs of neighbors of a cell
 function findNeighbors(cellId) {
     var coords = parseCellId(cellId);
     //console.log("coords", coords);
@@ -169,7 +169,7 @@ function findNeighbors(cellId) {
         // newR = oldR + delR
         var newR = coords[0] + dels[0];
         var newC = coords[1] + dels[1];
-        if (newR < 0 || newC < 0 || newR >= nRows || newC >= nColumns) {
+        if (newR < 0 || newC < 0 || newR >= nRows || newC >= nCols) {
             //calculated cell is off the grid (doesn't exist)
             //console.log("Cell doesn't exist: ", getCellId([newR, newC]));
         } else {
@@ -182,7 +182,7 @@ function findNeighbors(cellId) {
     return neighborList;
 }
 
-// Get the row and column numbers from the cell ID string (e.g. "r2-c4")
+// row and column numbers
 function parseCellId(cellId) {
     var splitted = cellId.split("-");
     //console.log(splitted);
@@ -192,7 +192,7 @@ function parseCellId(cellId) {
     return [thisR, thisC];
 }
 
-// Output the cell ID string for a given row and column number
+// cell ID string returned
 function getCellId(coordList) {
     return "r" + String(coordList[0]) + "-c" + String(coordList[1]);
 }
@@ -202,7 +202,7 @@ function getCell(cellId) {
     return document.getElementById(cellId);
 }
 
-// Set all cells to dead
+// Clear grid
 function clearGrid() {
     stopEvolving();
     var allCells = document.getElementsByClassName("cell");
@@ -211,16 +211,7 @@ function clearGrid() {
     }
 }
 
-// Set all cells to alive
-function fillGrid() {
-    stopEvolving();
-    var allCells = document.getElementsByClassName("cell");
-    for (var i = 0; i < allCells.length; i++) {
-        allCells[i].classList.add("alive");
-    }
-}
-
-// Set alternating alive-dead-alive pattern
+// Chekered grid
 function checkerGrid() {
     stopEvolving();
     var allCells = document.getElementsByClassName("cell");
@@ -236,12 +227,12 @@ function checkerGrid() {
     }
 }
 
-// Set cells to dead/alive at random
-function randomValues() {
+// Make grid camoflauge
+function camo() {
     stopEvolving();
     var allCells = document.getElementsByClassName("cell");
     for (var i = 0; i < allCells.length; i++) {
-        var randomBool = Math.random() >= 0.5;
-        allCells[i].classList.toggle("alive", randomBool);
+        var camoBoo = Math.random() >= 0.5;
+        allCells[i].classList.toggle("alive", camoBoo);
     }
 }
