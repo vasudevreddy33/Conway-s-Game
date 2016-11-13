@@ -1,8 +1,8 @@
 // Set default values
 var nCols = 20;
 var nRows = 20;
-document.getElementById("num-cols").value = nCols;
-document.getElementById("num-rows").value = nRows;
+document.getElementById("cols").value = nCols;
+document.getElementById("rows").value = nRows;
 reformGrid(nCols, nRows);
 
 // recreate grid
